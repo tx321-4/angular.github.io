@@ -1,2 +1,2 @@
 # angular.github.io
-angular 学习历程
+angular 学习历程2
