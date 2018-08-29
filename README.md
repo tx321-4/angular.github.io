@@ -1,6 +1,6 @@
 # angular.github.io
 ## angular 学习历程
- ============ 
+
 ### [查看效果](https://htmlpreview.github.io/? "进入")
 
 
