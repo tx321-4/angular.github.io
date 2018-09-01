@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>数据绑定</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="" ng-init="quantity=1;price=5">
+    	<h2>价格计算器</h2>
+    	数量：<input type="number" ng-model="quantity" />
+    	价格：<input type="number" ng-model="price" />
+    	<p><b>总价：</b>{{quantity * price}}</p>
+    </div>
+    <xmp>
+    	 <div ng-app="" ng-init="quantity=1;price=5">
+    	<h2>价格计算器</h2>
+    	数量：<input type="number" ng-model="quantity" />
+    	价格：<input type="number" ng-model="price" />
+    	<p><b>总价：</b>{{quantity * price}}</p>
+    	</div>
+    </xmp>
+</body>
+</html>

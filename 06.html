@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>实例06AngularJS 数字</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+	<xmp>
+		<div ng-app='' ng-init="quantity=1;cost=5">
+		<p>总价1：{{quantity * cost}}</p>
+	</div>
+	</xmp>
+
+	<div ng-app='' ng-init="quantity=1;cost=5">
+		<p>总价1：{{quantity * cost}}</p>
+	</div>
+		
+	<xmp> 相同实例
+	<div ng-app="" ng-init="quantity=1;cost=5">
+		<p>总价2：<span ng-bind="quantity * cost"></span></p>
+	</div> 
+	</xmp>
+</body>
+</html>
