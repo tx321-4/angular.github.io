@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>如何使用 Scope</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+
+</head>
+
+<body>
+    	
+    	<xmp>
+    	<div ng-app="myApp" ng-controller="myCtrl">
+		<h1>{{carname}}</h1>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+		app.controller('myCtrl',function($scope){
+			$scope.carname = "Volvo";
+		});
+	</script>
+    	</xmp>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<h1>{{carname}}</h1>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp',[]);
+		app.controller('myCtrl',function($scope){
+			$scope.carname = "Volvo";
+		});
+	</script>
+ 	<p>控制器中创建一个属性名"carname",对应了视图中使用{{}} 中的名称</p>
+</body>
+</html>

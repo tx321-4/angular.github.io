@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>创建自定义的指令--限制使用</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body >
+	<xmp>
+	<div ng-app="myApp">
+		<runoob-directive></runoob-directive>
+		<div runoob-directive></div>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.directive("runoobDirective",function(){
+			return{
+				restrict : "A",
+				template : "<h1>自定义指令！</h1>"
+			};
+		});
+	</script>
+	<p><strong>注意：</strong>通过设置<strong>restrict</strong>属性为"A"来设置指令只能通过HTML元素的属性来调用</p>
+	</xmp>
+	<div ng-app="myApp">
+		<runoob-directive></runoob-directive>
+		<div runoob-directive></div>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module("myApp",[]);
+		app.directive("runoobDirective",function(){
+			return{
+				restrict : "A",
+				template : "<h1>自定义指令！</h1>"
+			};
+		});
+	</script>
+	<p><strong>注意：</strong>通过设置<strong>restrict</strong>属性为"A"来设置指令只能通过HTML元素的属性来调用</p>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Scope 根作用域</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+
+</head>
+
+<body>
+    	<xmp>	
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<h1>姓氏为：{{lastname}} 家族成员：</h1>
+		<ul>
+			<li ng-repeat="x in names">{{ x }} {{lastname}}</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope,$rootScope){
+			$scope.names = ['Emil','Tobias','Linus'];
+			$rootScope.lastname = "Refsnes";
+		});
+	</script>
+    	</xmp>
+	<div ng-app="myApp" ng-controller="myCtrl">
+		<h1>姓氏为：{{lastname}} 家族成员：</h1>
+		<ul>
+			<li ng-repeat="x in names">{{ x }} {{lastname}}</li>
+		</ul>
+	</div>
+	<script type="text/javascript">
+		var app = angular.module('myApp', []);
+		app.controller('myCtrl', function($scope,$rootScope){
+			$scope.names = ['Emil','Tobias','Linus'];
+			$rootScope.lastname = "Refsnes";
+		});
+	</script>
+	<p>注意 $rootScope 在循环对象内外都可以访问</p>
+</body>
+</html>
