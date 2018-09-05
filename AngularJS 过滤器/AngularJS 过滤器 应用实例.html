@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>AngularJS 过滤器 应用实例</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+
+	<xmp>
+	<div ng-app="">
+		<p>1、uppercase,lowercase大小写转换</p>
+		{{"lower cap string" | uppercase}}<br />
+		{{"TANK is GOOD" | lowercase}}
+
+		<p>2、date格式化</p>
+		{{1490161945000 | date:"yyyy-MM-dd HH:mm:ss"}}
+
+		<p>3、number格式化（保留小数）</p>
+		{{149016.1945000 | number:2}}
+
+		<p>4、currency 货币格式化</p>
+		{{250 | currency}}<br />
+		{{250 | currency:"RMB ￥"}}
+
+		<p>5.filter查找</p>
+		<p>查找name为iphone的行</p>
+		{{
+		[{"age":20,"id":10,"name":"iphone"},
+		{"age":12,"id":11,"name":"sunm xing"},
+		{"age":44,"id":12,"name":"test abc"}
+		] | filter:{'name':'iphone'} }} 
+
+		<p>6、limitTo截取</p>
+		{{"1234567890" | limitTo: 6}}<br />
+		{{"1234567890" | limitTo: -4}}
+
+		<p>7、orderBy排序</p>
+		<p>根据id降序排</p>
+		{{ [{"age":20,"id":10,"name":"iphone"},
+		{"age":12,"id":11,"name":"sunm xing"},
+		{"age":44,"id":12,"name":"test abc"}
+		] | orderBy:'id' :true }}
+
+
+		<p>根据id升序排</p>
+		{{ [{"age":20,"id":10,"name":"iphone"},
+		{"age":12,"id":11,"name":"sunm xing"},
+		{"age":44,"id":12,"name":"test abc"}
+		] | orderBy:'id' }}
+
+	</div>
+	</xmp>
+	<div ng-app="">
+		<p>1、uppercase,lowercase大小写转换</p>
+		{{"lower cap string" | uppercase}}<br />
+		{{"TANK is GOOD" | lowercase}}
+
+		<p>2、date格式化</p>
+		{{1490161945000 | date:"yyyy-MM-dd HH:mm:ss"}}
+
+		<p>3、number格式化（保留小数）</p>
+		{{149016.1945000 | number:2}}
+
+		<p>4、currency 货币格式化</p>
+		{{250 | currency}}<br />
+		{{250 | currency:"RMB ￥"}}
+
+		<p>5.filter查找</p>
+		<p>查找name为iphone的行</p>
+		{{
+		[{"age":20,"id":10,"name":"iphone"},
+		{"age":12,"id":11,"name":"sunm xing"},
+		{"age":44,"id":12,"name":"test abc"}
+		] | filter:{'name':'iphone'} }} 
+
+		<p>6、limitTo截取</p>
+		{{"1234567890" | limitTo: 6}}<br />
+		{{"1234567890" | limitTo: -4}}
+
+		<p>7、orderBy排序</p>
+		<p>根据id降序排</p>
+		{{ [{"age":20,"id":10,"name":"iphone"},
+		{"age":12,"id":11,"name":"sunm xing"},
+		{"age":44,"id":12,"name":"test abc"}
+		] | orderBy:'id' :true }}
+
+
+		<p>根据id升序排</p>
+		{{ [{"age":20,"id":10,"name":"iphone"},
+		{"age":12,"id":11,"name":"sunm xing"},
+		{"age":44,"id":12,"name":"test abc"}
+		] | orderBy:'id' }}
+
+	</div>
+
+</body>
+</html>

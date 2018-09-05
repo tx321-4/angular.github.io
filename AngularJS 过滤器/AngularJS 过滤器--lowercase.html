@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>AngularJS 过滤器 --lowercase  过滤器将字符串格式化为小写</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+
+	<xmp>
+	<div ng-app='myApp' ng-controller="personCtrl">
+		<p>姓名为{{lastName | lowercase}}</p>
+
+	</div>
+    	<script type="text/javascript">
+    		angular.module('myApp',[]).controller('personCtrl',function($scope){
+    			$scope.firstName = 'John',
+    			$scope.lastName = 'Doe',
+    			$scope.fullName = function(){
+    				return $scope.firstName + " " + $scope.lastName;
+    			}
+    		});
+    	</script>
+	</xmp>
+	<div ng-app='myApp' ng-controller="personCtrl">
+		<p>姓名为{{lastName | lowercase}}</p>
+	</div>
+    	<script type="text/javascript">
+    		angular.module('myApp',[]).controller('personCtrl',function($scope){
+    			$scope.firstName = 'John',
+    			$scope.lastName = 'Doe',
+    			$scope.fullName = function(){
+    				return $scope.firstName + " " + $scope.lastName;
+    			}
+    		});
+    	</script>
+</body>
+</html>
