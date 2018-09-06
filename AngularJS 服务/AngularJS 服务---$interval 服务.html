@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS 服务-----$interval 服务</title>
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+    <xmp>
+            <div ng-app="myApp" ng-controller="myCtrl">
+                    <p>现在时间是：</p>
+                    <h1>{{theTime}}</h1>
+                </div>
+                <p>$interval 访问在指定的周期（以毫秒计）来调用函数或计算表达式。</p>
+                <script type="text/javascript">
+                        var app = angular.module('myApp',[]);
+                        app.controller('myCtrl',function($scope,$interval){
+                            $scope.theTime = new Date().toLocaleTimeString();
+                            $interval(function(){
+                                $scope.theTime = new Date().toLocaleTimeString();
+                            },1000);
+                        });
+                </script>
+    </xmp>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>现在时间是：</p>
+        <h1>{{theTime}}</h1>
+    </div>
+    <p>$interval 访问在指定的周期（以毫秒计）来调用函数或计算表达式。</p>
+    <script type="text/javascript">
+            var app = angular.module('myApp',[]);
+            app.controller('myCtrl',function($scope,$interval){
+                $scope.theTime = new Date().toLocaleTimeString();
+                $interval(function(){
+                    $scope.theTime = new Date().toLocaleTimeString();
+                },1000);
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS 服务-----过滤器中使用自定义服务</title>
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+    <xmp>
+            <div ng-app="myApp" >
+                    在过滤器中使用服务：
+                    <h1>{{255 | myFormat}}</h1>
+               </div>
+               <script type="text/javascript">
+                    var app = angular.module('myApp',[]);
+                    app.service('hexafy',function(){
+                        this.myFunc = function(x){
+                            return x.toString(16);
+                        }
+                    });
+                    app.filter('myFormat',['hexafy',function(hexafy){
+                        return function(x){
+                            return hexafy.myFunc(x);
+                        };
+                    }]);
+               </script>
+    </xmp>
+   <div ng-app="myApp" >
+        在过滤器中使用服务：
+        <h1>{{255 | myFormat}}</h1>
+   </div>
+   <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.service('hexafy',function(){
+            this.myFunc = function(x){
+                return x.toString(16);
+            }
+        });
+        app.filter('myFormat',['hexafy',function(hexafy){
+            return function(x){
+                return hexafy.myFunc(x);
+            };
+        }]);
+   </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS 服务-----$location 服务</title>
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+    <xmp>
+            <div ng-app="myApp" ng-controller="myCtrl">
+                    <p>当前的url：</p>
+                    <h1>{{myUrl}}</h1>
+                </div>
+                <p>该实例使用的是内建的 $location 服务获取当前页面的URL</p>
+            
+                <script type="text/javascript">
+                    var app = angular.module('myApp',[]);
+                    app.controller('myCtrl',function($scope,$location){
+                        $scope.myUrl = $location.absUrl();
+                    });
+                </script>
+    </xmp>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>当前的url：</p>
+        <h1>{{myUrl}}</h1>
+    </div>
+    <p>该实例使用的是内建的 $location 服务获取当前页面的URL</p>
+
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope,$location){
+            $scope.myUrl = $location.absUrl();
+        });
+    </script>
+</body>
+</html>

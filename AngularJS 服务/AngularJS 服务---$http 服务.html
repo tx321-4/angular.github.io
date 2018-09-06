@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS 服务-----$http 服务</title>
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+    <xmp>
+            <div ng-app="myApp" ng-controller="myCtrl">
+                    <p>欢迎信息：</p>
+                    <h1>{{myWelcome}}</h1>
+                </div>
+                <p>$http 服务向服务器请求信息，返回的值放入变量"myWelcome"中。</p>
+            
+                <script type="text/javascript">
+                    var app =angular.module('myApp',[]);
+                    app.controller('myCtrl',function($scope,$http){
+                        $http.get('welcome.html').then(function(response){
+                            $scope.myWelcome = response.data;
+                        });
+                    });
+                </script>
+    </xmp>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>欢迎信息：</p>
+        <h1>{{myWelcome}}</h1>
+    </div>
+    <p>$http 服务向服务器请求信息，返回的值放入变量"myWelcome"中。</p>
+
+    <script type="text/javascript">
+        var app =angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope,$http){
+            $http.get('welcome.html').then(function(response){
+                $scope.myWelcome = response.data;
+            });
+        });
+    </script>
+</body>
+</html>

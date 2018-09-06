@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS 服务---$watch</title>
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+    <xmp>
+            <div ng-app="myApp" ng-controller="myCtrl">
+                    <b>请输入姓名：</b>
+                    <b>姓：</b><input type="text" ng-model = "lastName" /><br />
+                    <b>名：</b><input type="text" ng-model = "firstName" /><br />
+                    <h1>{{lastName + " " + firstName}}</h1>
+                    <h2>{{fullName}}</h2>
+                </div>
+                <script type="text/javascript">
+                    var app = angular.module('myApp',[]);
+                    app.controller('myCtrl',function($scope){
+                        $scope.lastName = "";
+                        $scope.firstName = "";
+            
+                        //监听lastName 的变化，更新 fullName
+                        $scope.$watch('lastName',function(){
+                            $scope.fullName =$scope.lastName + " " + $scope.firstName;
+                        });
+                        //监听firstName 的变化，更新fullName
+                        $scope.$watch('firstName',function(){
+                            $scope.fullName = $scope.lastName + " " + $scope.firstName;
+                        });
+                    });
+                </script>
+    </xmp>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <b>请输入姓名：</b>
+        <b>姓：</b><input type="text" ng-model = "lastName" /><br />
+        <b>名：</b><input type="text" ng-model = "firstName" /><br />
+        <h1>{{lastName + " " + firstName}}</h1>
+        <h2>{{fullName}}</h2>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope){
+            $scope.lastName = "";
+            $scope.firstName = "";
+
+            //监听lastName 的变化，更新 fullName
+            $scope.$watch('lastName',function(){
+                $scope.fullName =$scope.lastName + " " + $scope.firstName;
+            });
+            //监听firstName 的变化，更新fullName
+            $scope.$watch('firstName',function(){
+                $scope.fullName = $scope.lastName + " " + $scope.firstName;
+            });
+        });
+    </script>
+</body>
+</html>

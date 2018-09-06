@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS 服务---不使用interval服务 运用$apply</title>
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+    <xmp>
+            <div ng-app="myApp" ng-controller="myCtrl">
+                    <p>现在时间是：</p>
+                    <h1>{{theTime}}</h1>
+                </div>
+                <p>上述代码是不使用$interval服务的情况下，运用$apply,实现每一秒显示信息的功能。</p>
+                <script type="text/javascript">
+                    var app = angular.module('myApp',[]);
+                    app.controller('myCtrl',function($scope){
+                        $scope.theTime = new Date().toLocaleTimeString();
+                        $scope.setTime = function(){
+                            //$apply 方法 可以修改数据
+                            $scope.$apply(function(){
+                                $scope.theTime = new Date().toLocaleTimeString();
+                            });
+                        };
+                        setInterval($scope.setTime,1000);
+                    });
+                </script>
+    </xmp>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>现在时间是：</p>
+        <h1>{{theTime}}</h1>
+    </div>
+    <p>上述代码是不使用$interval服务的情况下，运用$apply,实现每一秒显示信息的功能。</p>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope){
+            $scope.theTime = new Date().toLocaleTimeString();
+            $scope.setTime = function(){
+                //$apply 方法 可以修改数据
+                $scope.$apply(function(){
+                    $scope.theTime = new Date().toLocaleTimeString();
+                });
+            };
+            setInterval($scope.setTime,1000);
+        });
+    </script>
+</body>
+</html>
