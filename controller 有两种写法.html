@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>controller 有两种写法</title>
+</head>
+<body>
+    <pre>
+        controller 有两种写法，讨论一下两种写法的区别：
+
+        写法 1：
+        
+        app.controller('myCtrl', function($scope, $location) {
+            $scope.myUrl = $location.absUrl();
+        });
+        
+        写法2：
+        
+        app.controller('myCtrl', ["$scope","$location",function($scope,$location) {
+            $scope.myUrl = $location.absUrl();
+        }]);
+        两种写法都是对的，但是推荐第二种写法，因为第一种写法在 js 压缩后会出问题，而第二种写法可以完美应对 js 压缩，原因是：js 压缩后，变量名会重命名，故第一种写法会报错。
+        
+        上面的例子第 2 种写法还可以这样：
+        
+        app.controller('myCtrl', ["$scope","$location",function(a, b) {
+            a.myUrl = b.absUrl();
+        }]);
+    </pre>
+</body>
+</html>
