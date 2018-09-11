@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用 数据对象作为数据源</title>
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+<xmp>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <p>选择的网站是：</p>
+            <select ng-model="selectedSite" ng-options="x for (x,y) in sites"></select>
+            <h1>你选择的值是：{{selectedSite}}</h1>
+        </div>
+        <script type="text/javascript">
+            var app = angular.module('myApp',[]);
+            app.controller('myCtrl',function($scope){
+                $scope.sites = {
+                    site01 : "Google",
+                    site02 : "Runoob",
+                    site03 : "Taobao"
+                };
+            });
+        </script>
+</xmp>
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <p>选择的网站是：</p>
+        <select ng-model="selectedSite" ng-options="x for (x,y) in sites"></select>
+        <h1>你选择的值是：{{selectedSite}}</h1>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',function($scope){
+            $scope.sites = {
+                site01 : "Google",
+                site02 : "Runoob",
+                site03 : "Taobao"
+            };
+        });
+    </script>
+    <p>该实例演示了使用对象作为创建下拉列表。</p>
+</body>
+</html>

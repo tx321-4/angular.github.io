@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>使用 ng-repeat 创建选择框</title>
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+    <xmp>
+            <div ng-app="myApp" ng-controller="myCtrl">
+                    <select>
+                        <option ng-repeat="x in names">{{ x }}</option>
+                    </select>
+                </div> 
+                <script type="text/javascript">
+                    var app = angular.module('myApp',[]);
+                    app.controller('myCtrl',function($scope){
+                        $scope.names =  ["Google","Runoob","Taobao"];
+                    });
+                </script>
+                <p>该实例演示了使用ng-repeat指令来创建下拉列表</p>
+    </xmp>
+        <div ng-app="myApp" ng-controller="myCtrl">
+            <select>
+                <option ng-repeat="x in names">{{ x }}</option>
+            </select>
+        </div>
+
+        <script type="text/javascript">
+            var app = angular.module('myApp',[]);
+            app.controller('myCtrl',function($scope){
+                $scope.names =  ["Google","Runoob","Taobao"];
+            });
+        </script>
+
+        <p>该实例演示了使用ng-repeat指令来创建下拉列表</p>
+</body>
+</html>
