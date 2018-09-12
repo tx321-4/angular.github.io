@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS Select设置初始值2</title>
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+    <xmp>
+            <div ng-app="myApp" ng-controller="myCtrl">
+                    <select ng-init="selectPerson=persons['caohui']" ng-model="selectPerson" ng-options="x for (x, y) in persons"></select>
+                    <p>年龄：{{selectPerson.age}}</p>
+                    <p>性别：{{selectPerson.sex}}</p>
+                    <p>月薪：{{selectPerson.salary}}</p>
+                </div>
+                <script type="text/javascript">
+                    var app = angular.module('myApp',[]);
+                    app.controller('myCtrl',
+                    function($scope){
+                        $scope.persons = {
+                            caohui : {
+                                age :27,
+                                sex : 'male',
+                                salary : 10000
+                            },
+                            youlangta : {
+                                age :20,
+                                sex : 'male',
+                                salary :500
+                            },
+                            chenyanchan : {
+                                age :24,
+                                sex : 'female',
+                                salary : 6000
+                            }
+                        }
+                    })
+                </script>
+    </xmp>
+
+    <div ng-app="myApp" ng-controller="myCtrl">
+        <select ng-init="selectPerson=persons['caohui']" ng-model="selectPerson" ng-options="x for (x, y) in persons"></select>
+        <p>年龄：{{selectPerson.age}}</p>
+        <p>性别：{{selectPerson.sex}}</p>
+        <p>月薪：{{selectPerson.salary}}</p>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.controller('myCtrl',
+        function($scope){
+            $scope.persons = {
+                caohui : {
+                    age :27,
+                    sex : 'male',
+                    salary : 10000
+                },
+                youlangta : {
+                    age :20,
+                    sex : 'male',
+                    salary :500
+                },
+                chenyanchan : {
+                    age :24,
+                    sex : 'female',
+                    salary : 6000
+                }
+            }
+        })
+    </script>
+</body>
+</html> 

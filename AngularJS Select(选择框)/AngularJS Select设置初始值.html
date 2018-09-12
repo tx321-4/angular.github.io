@@ -8,6 +8,26 @@
     <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
 </head>
 <body>
+    <xmp>
+        <div ng-app="myApp" ng-controller="myCtrl">
+                <p>选择一辆车：</p>
+                <select ng-model="selectedCar" ng-options="x for (x, y) in cars"></select>
+                <h1>你选择的是：{{selectedCar.brand}}</h1>
+                <h2>模型：{{selectedCar.model}}</h2>
+                <h3>颜色：{{selectedCar.color}}</h3>
+            </div>
+            <script type="text/javascript">
+                var app = angular.module('myApp',[]);
+                app.controller('myCtrl',function($scope){
+                    $scope.cars = {
+                        car01 : {brand : "Ford", model : "Mustang", color : "red"},
+                        car02 : {brand : "Fiat", model : "500", color : "white"},
+                        car03 : {brand : "Volvo", model : "XC90", color : "black"}
+                    };
+                    $scope.selectedCar = $scope.cars.car02; // 
+                });
+            </script>
+    </xmp>
     <div ng-app="myApp" ng-controller="myCtrl">
         <p>选择一辆车：</p>
         <select ng-model="selectedCar" ng-options="x for (x, y) in cars"></select>
@@ -25,8 +45,6 @@
             };
             $scope.selectedCar = $scope.cars.car02; // 
         });
-
-
     </script>
     <p>注意选中的值是一个对象</p>
 </body>
