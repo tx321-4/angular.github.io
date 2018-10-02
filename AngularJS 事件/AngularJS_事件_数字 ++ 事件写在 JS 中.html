@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS_事件_数字 ++ 事件写在 JS 中</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+  <xmp>
+        <div ng-app="myApp" ng-controller="myCtrl">
+                <button ng-click="sum()">点我！</button>
+                <p>{{count}}</p>
+            </div>
+              <script type="text/javascript">
+              var app = angular.module('myApp',[]);
+              app.controller('myCtrl',function($scope){
+                  $scope.count = 0;
+                  $scope.sum = function(){
+                      $scope.count = this.count + 1;
+                  }
+              })
+              </script>
+  </xmp>
+    <div ng-app="myApp" ng-controller="myCtrl">
+      <button ng-click="sum()">点我！</button>
+      <p>{{count}}</p>
+  </div>
+    <script type="text/javascript">
+    var app = angular.module('myApp',[]);
+    app.controller('myCtrl',function($scope){
+        $scope.count = 0;
+        $scope.sum = function(){
+            $scope.count = this.count + 1;
+        }
+    })
+    </script>
+</body>
+</html>

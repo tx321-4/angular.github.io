@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS_事件_绑定切换事件</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+    <xmp>
+            <div ng-app="myApp" ng-controller="event">
+                    <div ng-show="flag" style="background:#ccc;width:20px;height:20px;border-radius:50%; text-align: center;">球</div>
+                    <button ng-click="toggle()">{{ text }}</button>
+                </div>
+                <script type="text/javascript">
+                    var app = angular.module('myApp',[]);
+                    app.controller('event',['$scope',function($scope){
+                        $scope.flag = false;
+                        $scope.text = "点击可见";
+                        $scope.toggle = function(){
+                            $scope.flag = !$scope.flag;
+                            $scope.text = $scope.flag ? '点击消失' : '点击可见';
+                        }
+                    }]) 
+                </script>
+    </xmp>
+    <div ng-app="myApp" ng-controller="event">
+        <div ng-show="flag" style="background:#ccc;width:20px;height:20px;border-radius:50%; text-align: center;">球</div>
+        <button ng-click="toggle()">{{ text }}</button>
+    </div>
+
+    <script type="text/javascript">
+        var app = angular.module('myApp',[]);
+        app.controller('event',['$scope',function($scope){
+            $scope.flag = false;
+            $scope.text = "点击可见";
+            $scope.toggle = function(){
+                $scope.flag = !$scope.flag;
+                $scope.text = $scope.flag ? '点击消失' : '点击可见';
+            }
+        }])
+
+    </script>
+    
+</body>
+</html>
