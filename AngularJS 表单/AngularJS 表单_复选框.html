@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS 表单_复选框</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+
+<xmp>
+        <div ng-app="">
+                <form action="">
+                    选中复选框，显示标题：
+                    <input type="checkbox" ng-model="myVar" />
+                </form>
+                <h1 ng-show="myVar">my Header</h1>
+            </div>
+</xmp>
+
+    <div ng-app="">
+        <form action="">
+            选中复选框，显示标题：
+            <input type="checkbox" ng-model="myVar" />
+        </form>
+        <h1 ng-show="myVar">my Header</h1>
+    </div>
+
+        <p>标题使用了ng-show指令，复选框选中后显示好标签内容</p>
+
+</body>
+</html>
