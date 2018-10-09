@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS 动画--css过渡</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular-animate.min.js"></script>
+</head>
+<body>
+
+<xmp>
+        <style type="text/css">
+            div{
+                transition:all linear 0.5s;
+                background-color:lightblue;
+                height:100px;     
+            }
+            .ng-hide{
+                height:0;
+            }
+        </style>
+            <section ng-app="myApp">
+                <h1>隐藏 DIV：<input type="checkbox" ng-model="myCheck"></h1>
+                <div ng-hide="myCheck"></div>
+            </section>
+            <script type="text/javascript">
+                var app = angular.module('myApp',['ngAnimate']);
+            </script>       
+</xmp>
+<style type="text/css">
+    div{
+        transition:all linear 0.5s;
+        background-color:lightblue;
+        height:100px;     
+    }
+    .ng-hide{
+        height:0;
+    }
+</style>
+    <section ng-app="myApp">
+        <h1>隐藏 DIV：<input type="checkbox" ng-model="myCheck"></h1>
+        <div ng-hide="myCheck"></div>
+    </section>
+    <script type="text/javascript">
+        var app = angular.module('myApp',['ngAnimate']);
+    </script>
+</body>
+</html>
