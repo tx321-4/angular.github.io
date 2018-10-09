@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS 包含 跨域包含</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="myApp">
+        <div ng-include="'https://c.xxxx.com/angular_include.php'"></div>
+    </div>
+    <script type="text/javascript">
+        var app = angular.module("myApp",[]);
+        app.config(function($sceDelegateProvider){
+            $sceDelegateProvider.resourceUrlWhitelist([
+                'https://c.xxxx.com/**'
+            ]);
+        });
+    </script>
+    <p你需要设置服务端允许跨域访问，</p>
+</body>
+</html>
