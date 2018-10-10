@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AngularJS 应用</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="" rel="stylesheet">
+    <script type="text/javascript" src="http://swt.yizhongdashi.top/js/angular.min.js"></script>
+    
+</head>
+<body >
+    <div ng-app="myNoteApp" ng-controller="myNoteCtrl">
+        <h2>我的笔记</h2>
+        <textArea ng-model="message" cols ="40" rows="10"></textArea>
+        <p>
+            <button ng-click="save()">保存</button>
+            <button ng-click="clear()">清除</button>
+        </p>
+        <p>剩余字数：<span ng-bind="left()"></span></p>
+    </div>
+<script src="myNoteApp.js"></script>
+<script src="myNoteCtrl.js"></script>
+</body>
+</html>
